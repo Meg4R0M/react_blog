@@ -24,8 +24,20 @@ class ArticlesRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('u')
             ->select('u')
             ->where('u.categorie = :categorie')
+            ->andWhere('u.publie = 1')
             ->orderBy('u.id')
             ->setParameter('categorie', $categorie);
+        return $qb->getQuery()->getResult();
+    }
+
+    public function recherche($chaine)
+    {
+        $qb = $this->createQueryBuilder('u');
+        $qb->select('u')
+            ->where($qb->expr()->like('u.titre', ':chaine'))
+            ->andWhere('u.publie = 1')
+            ->orderBy('u.id')
+            ->setParameter('chaine', '%'.$chaine.'%');
         return $qb->getQuery()->getResult();
     }
 }

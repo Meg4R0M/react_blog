@@ -39,6 +39,7 @@ class ArticlesController extends Controller
     public function indexByCategorie($slug)
     {
         $em = $this->getDoctrine()->getManager();
+
         $encoders = array(new JsonEncoder());
         $normalizers = array(new ObjectNormalizer());
         $serializer = new Serializer($normalizers, $encoders);
@@ -77,4 +78,38 @@ class ArticlesController extends Controller
             true
         );
     }
+
+    /**
+     * @Route("/articles/search/{slug}", name="articles_search")
+     */
+    public function searchArticle($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $encoders = array(new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $articles = $em->getRepository('App:Articles')->recherche($slug);
+
+        if (!$articles){
+            $error = $serializer->serialize('No articles found with this search terms => '.$slug, 'json');
+            return new JsonResponse(
+                $error,
+                200,
+                array(),
+                true
+            );
+        }
+
+        $jsonArticles = $serializer->serialize($articles, 'json');
+
+        return new JsonResponse(
+            $jsonArticles,
+            200,
+            array(),
+            true
+        );
+    }
+
 }

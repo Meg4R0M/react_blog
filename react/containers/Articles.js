@@ -17,14 +17,24 @@ class ArticlesContainer extends Component {
     componentDidMount() {
         window.onhashchange = (e) => {
             this.setState({ loading: true });
-            this.setState({ currentRoute: window.location.hash }),
+            this.setState({ currentRoute: window.location.hash });
+            this.state.currentRoute.includes("search") ?
                 axios.get("/articles/"+window.location.hash.replace( "#", ""))
                     .then(res => {
                         const articles = Array.isArray(res.data) ? res.data.map(obj => obj) : res.data;
                         this.setState({
                             articles,
                             loading: false
-                        });
+                        })
+                    })
+                :
+                axios.get("/articles/"+window.location.hash.replace( "#", ""))
+                    .then(res => {
+                        const articles = Array.isArray(res.data) ? res.data.map(obj => obj) : res.data;
+                        this.setState({
+                            articles,
+                            loading: false
+                        })
                     });
         };
 
@@ -36,19 +46,12 @@ class ArticlesContainer extends Component {
                     loading: false
                 });
             });
-    }
+    };
 
     render() {
-        let data;
-        if (this.state.loading) {
-            data = null
-        } else {
-            data = <ArticlesElements items={this.state.articles} />
-        }
-
         return (
             <div>
-                {data}
+                {this.state.loading ? null : <ArticlesElements items={this.state.articles} />}
             </div>
         )
     }
