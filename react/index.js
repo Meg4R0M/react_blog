@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Home from "./containers/Home";
 import AboutUs from "./containers/AboutUs";
 import ArticlesContainer from "./containers/Articles";
+import CategoriesWidget from "./containers/CategoriesWidget";
 
 class App extends Component {
 
@@ -31,8 +32,19 @@ class Articles extends Component {
 
 }
 
-const wrapper = document.getElementById("root");
-wrapper ? ReactDOM.render(<App />, wrapper) : false;
+
+class Categories extends Component {
+
+    render() {
+        return (
+            <CategoriesWidget />
+        )
+    }
+
+}
 
 const articlesWrapper = document.getElementById("articles");
-wrapper ? ReactDOM.render(<Articles />, articlesWrapper) : false;
+articlesWrapper ? ReactDOM.render(<Articles />, articlesWrapper) : false;
+
+const categoriesWrapper = document.getElementById("categories");
+categoriesWrapper ? ReactDOM.render(<Categories />, categoriesWrapper) : false;

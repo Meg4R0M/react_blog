@@ -17,7 +17,7 @@ class Articles
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Categorie")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categories")
      * @ORM\JoinColumn(nullable=false)
      */
     private $categorie;
@@ -67,12 +67,12 @@ class Articles
         return $this->id;
     }
 
-    public function getCategorie(): ?Categorie
+    public function getCategorie(): ?Categories
     {
         return $this->categorie;
     }
 
-    public function setCategorie(?Categorie $categorie): self
+    public function setCategorie(?Categories $categorie): self
     {
         $this->categorie = $categorie;
 

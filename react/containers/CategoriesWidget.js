@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ArticlesElements from '../elements/ArticlesElement';
+import Categories from '../elements/CategoriesElement';
 import axios from "axios/index";
 
-class ArticlesContainer extends Component {
+class CategoriesWidget extends Component {
 
     constructor(props) {
         super(props);
@@ -14,11 +14,11 @@ class ArticlesContainer extends Component {
     }
 
     componentDidMount() {
-        axios.get(`/articles`)
+        axios.get(`/categories`)
             .then(res => {
-                const articles = res.data.map(obj => obj);
+                const categories = res.data.map(obj => obj);
                 this.setState({
-                    articles,
+                    categories,
                     loading: false
                 });
             });
@@ -29,7 +29,7 @@ class ArticlesContainer extends Component {
         if (this.state.loading) {
             data = null
         } else {
-            data = <ArticlesElements items={this.state.articles} />
+            data = <Categories items={this.state.categories} />
         }
 
         return (
@@ -41,4 +41,4 @@ class ArticlesContainer extends Component {
 
 }
 
-export default ArticlesContainer;
+export default CategoriesWidget;
