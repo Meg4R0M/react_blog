@@ -5,3 +5,7 @@ index:
 about-us:
     path: /about-us
     controller: App\Controller\DefaultController::index
+
+articles_categorie:
+    path: /articles/{slug}
+    controller: App\Controller\ArticlesController::indexByCategorie

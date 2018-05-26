@@ -8,12 +8,26 @@ class ArticlesContainer extends Component {
         super(props);
 
         this.state = {
+            currentRoute: "",
             articles: [],
             loading: true,
         };
     }
 
     componentDidMount() {
+        window.onhashchange = (e) => {
+            this.setState({ loading: true });
+            this.setState({ currentRoute: window.location.hash }),
+                axios.get("/articles/"+window.location.hash.replace( "#", ""))
+                    .then(res => {
+                        const articles = Array.isArray(res.data) ? res.data.map(obj => obj) : res.data;
+                        this.setState({
+                            articles,
+                            loading: false
+                        });
+                    });
+        };
+
         axios.get(`/articles`)
             .then(res => {
                 const articles = res.data.map(obj => obj);
