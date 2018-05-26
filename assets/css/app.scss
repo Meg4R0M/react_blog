@@ -1,0 +1,17 @@
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+$fa-font-path: "~font-awesome/fonts";
+
+@import '~bootstrap/scss/bootstrap';
+
+@import 'loader';
