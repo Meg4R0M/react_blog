@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ArticlesElements from '../elements/ArticlesElement';
 import axios from "axios/index";
+import { RingLoader } from 'react-spinners';
 
 class ArticlesContainer extends Component {
 
@@ -51,7 +52,15 @@ class ArticlesContainer extends Component {
     render() {
         return (
             <div>
-                {this.state.loading ? null : <ArticlesElements items={this.state.articles} />}
+                {this.state.loading ?
+                    <div className='sweet-loading'>
+                        <RingLoader
+                            color={'#123abc'}
+                            loading={this.state.loading}
+                        />
+                    </div>
+                    :
+                    <ArticlesElements items={this.state.articles} />}
             </div>
         )
     }
