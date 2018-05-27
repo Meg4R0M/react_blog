@@ -33,6 +33,39 @@ class ArticlesController extends Controller
         );
     }
 
+    /**
+     * @Route("/articles/full/{id}", name="articles_full")
+     */
+    public function articleFull($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $encoders = array(new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $articles = $em->getRepository('App:Articles')->findOneBy(['id' => $id]);
+
+        if (!$articles){
+            $error = $serializer->serialize('No articles found in this categorie', 'json');
+            return new JsonResponse(
+                $error,
+                200,
+                array(),
+                true
+            );
+        }
+
+        $jsonArticles = $serializer->serialize($articles, 'json');
+
+        return new JsonResponse(
+            $jsonArticles,
+            200,
+            array(),
+            true
+        );
+    }
+
     /*
      * @Route("/articles/{slug}", name="articles_categorie")
      */

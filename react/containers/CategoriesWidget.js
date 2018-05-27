@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Categories from '../elements/CategoriesElement';
 import axios from "axios/index";
-import { RingLoader } from 'react-spinners';
+import { CircleLoader } from 'react-spinners';
 
 class CategoriesWidget extends Component {
 
@@ -30,7 +30,7 @@ class CategoriesWidget extends Component {
             <div>
                 {this.state.loading ?
                     <div className='sweet-loading'>
-                        <RingLoader
+                        <CircleLoader
                             color={'#123abc'}
                             loading={this.state.loading}
                         />
