@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Categories from '../elements/CategoriesElement';
 import axios from "axios/index";
+import { RingLoader } from 'react-spinners';
 
 class CategoriesWidget extends Component {
 
@@ -25,16 +26,17 @@ class CategoriesWidget extends Component {
     }
 
     render() {
-        let data;
-        if (this.state.loading) {
-            data = null
-        } else {
-            data = <Categories items={this.state.categories} />
-        }
-
         return (
             <div>
-                {data}
+                {this.state.loading ?
+                    <div className='sweet-loading'>
+                        <RingLoader
+                            color={'#123abc'}
+                            loading={this.state.loading}
+                        />
+                    </div>
+                    :
+                    <Categories items={this.state.categories} />}
             </div>
         )
     }

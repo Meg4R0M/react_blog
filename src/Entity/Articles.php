@@ -23,7 +23,8 @@ class Articles
     private $categorie;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\OneToOne(targetEntity="App\Entity\Media")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $image;
 
@@ -79,12 +80,12 @@ class Articles
         return $this;
     }
 
-    public function getImage(): ?int
+    public function getImage(): ?Media
     {
         return $this->image;
     }
 
-    public function setImage(?int $image): self
+    public function setImage(?Media $image): self
     {
         $this->image = $image;
 

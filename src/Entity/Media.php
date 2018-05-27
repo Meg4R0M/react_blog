@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CategorieRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MediaRepository")
  */
-class Categories
+class Media
 {
     /**
      * @ORM\Id()
@@ -22,10 +22,14 @@ class Categories
     private $nom;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Media")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private $path;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $alt;
 
     public function getId()
     {
@@ -44,14 +48,26 @@ class Categories
         return $this;
     }
 
-    public function getImage(): ?Media
+    public function getPath(): ?string
     {
-        return $this->image;
+        return $this->path;
     }
 
-    public function setImage(?Media $image): self
+    public function setPath(string $path): self
     {
-        $this->image = $image;
+        $this->path = $path;
+
+        return $this;
+    }
+
+    public function getAlt(): ?string
+    {
+        return $this->alt;
+    }
+
+    public function setAlt(?string $alt): self
+    {
+        $this->alt = $alt;
 
         return $this;
     }

@@ -13,7 +13,7 @@ class ArticlesFixtures extends Fixture implements OrderedFixtureInterface
     {
         $article1 = new Articles();
         $article1->setCategorie($this->getReference('categorie1'));
-        $article1->setImage(1);
+        $article1->setImage($this->getReference('media7'));
         $article1->setTitre("Article Test 1");
         $article1->setAccroche("
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper velit a mi aliquam, at vehicula turpis bibendum. Cras ac posuere nulla. Proin viverra tellus a libero laoreet laoreet a vitae ipsum. Aenean at tortor arcu. Donec elit nunc, porta sed metus ut, sodales laoreet diam. Sed ac rutrum urna. Donec fermentum consectetur vulputate. Aenean ac dolor volutpat, rhoncus erat ut, ornare ante. Proin at pretium ex, at fringilla augue. Aenean sollicitudin laoreet nibh, nec elementum orci feugiat nec. Vestibulum ex purus, pharetra id risus at, bibendum fringilla tortor. Vivamus tempor ullamcorper urna, sit amet dapibus dui vehicula sed. 
@@ -38,7 +38,7 @@ Vestibulum nec posuere dolor, cursus fermentum nisl. Maecenas luctus mauris enim
 
         $article2 = new Articles();
         $article2->setCategorie($this->getReference('categorie2'));
-        $article2->setImage(2);
+        $article2->setImage($this->getReference('media8'));
         $article2->setTitre("Article Test 2");
         $article2->setAccroche("
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper velit a mi aliquam, at vehicula turpis bibendum. Cras ac posuere nulla. Proin viverra tellus a libero laoreet laoreet a vitae ipsum. Aenean at tortor arcu. Donec elit nunc, porta sed metus ut, sodales laoreet diam. Sed ac rutrum urna. Donec fermentum consectetur vulputate. Aenean ac dolor volutpat, rhoncus erat ut, ornare ante. Proin at pretium ex, at fringilla augue. Aenean sollicitudin laoreet nibh, nec elementum orci feugiat nec. Vestibulum ex purus, pharetra id risus at, bibendum fringilla tortor. Vivamus tempor ullamcorper urna, sit amet dapibus dui vehicula sed. 
@@ -63,7 +63,7 @@ Vestibulum nec posuere dolor, cursus fermentum nisl. Maecenas luctus mauris enim
 
         $article3 = new Articles();
         $article3->setCategorie($this->getReference('categorie3'));
-        $article3->setImage(3);
+        $article3->setImage($this->getReference('media9'));
         $article3->setTitre("Article Test 3");
         $article3->setAccroche("
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper velit a mi aliquam, at vehicula turpis bibendum. Cras ac posuere nulla. Proin viverra tellus a libero laoreet laoreet a vitae ipsum. Aenean at tortor arcu. Donec elit nunc, porta sed metus ut, sodales laoreet diam. Sed ac rutrum urna. Donec fermentum consectetur vulputate. Aenean ac dolor volutpat, rhoncus erat ut, ornare ante. Proin at pretium ex, at fringilla augue. Aenean sollicitudin laoreet nibh, nec elementum orci feugiat nec. Vestibulum ex purus, pharetra id risus at, bibendum fringilla tortor. Vivamus tempor ullamcorper urna, sit amet dapibus dui vehicula sed. 
@@ -88,10 +88,9 @@ Vestibulum nec posuere dolor, cursus fermentum nisl. Maecenas luctus mauris enim
 
         $manager->flush();
     }
-
-
+    
     public function getOrder()
     {
-        return 2;
+        return 3;
     }
 }

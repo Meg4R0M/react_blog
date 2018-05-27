@@ -14,7 +14,12 @@ class CategoriesElement extends Component {
                     (item) =>
                         <div key={item.id} className="col-lg-6">
                             <ul className="list-unstyled mb-0">
-                                <li><a href={"#"+encodeURI(decodeURI(item.nom))}>{item.nom}</a></li>
+                                <li>
+                                    <a href={"#"+encodeURI(decodeURI(item.nom))}>
+                                        <img src={item.image.path} alt={item.image.alt} title={item.image.title} width="15px"/>&nbsp;
+                                        {item.nom}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                 )}

@@ -14,7 +14,7 @@ class ArticleElements extends Component {
                     { this.props.items.map(
                         item =>
                             <div key={item.id} className="card mb-4">
-                                <img className="card-img-top" src="http://placehold.it/750x300" alt="Card image cap" />
+                                <img className="card-img-top" src={item.image.path} alt={item.image.alt} title={item.image.title}/>
                                 <div className="card-body">
                                     <h2 className="card-title">{item.titre}</h2>
                                     <p className="card-text">{item.accroche}</p>
