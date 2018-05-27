@@ -14,20 +14,10 @@ class App extends Component {
         return (
             <Router>
                 <div>
-                    <Route exact path="/" component={Home}/>
+                    <Route path="/" component={ArticlesContainer}/>
                     <Route path="/about-us" component={AboutUs}/>
                 </div>
             </Router>
-        )
-    }
-
-}
-
-class Articles extends Component {
-
-    render() {
-        return (
-            <ArticlesContainer />
         )
     }
 
@@ -53,8 +43,8 @@ class Categories extends Component {
 
 }
 
-const articlesWrapper = document.getElementById("articles");
-articlesWrapper ? ReactDOM.render(<Articles />, articlesWrapper) : false;
+const appRootWrapper = document.getElementById("appRoot");
+appRootWrapper ? ReactDOM.render(<App />, appRootWrapper) : false;
 
 const searchWrapper = document.getElementById("search");
 searchWrapper ? ReactDOM.render(<Search />, searchWrapper) : false;

@@ -8,8 +8,10 @@ class ArticlesContainer extends Component {
     constructor(props) {
         super(props);
 
+        let currentHash = window.location.hash;
+
         this.state = {
-            currentRoute: "",
+            currentRoute: currentHash,
             articles: [],
             loading: true,
         };
@@ -26,29 +28,43 @@ class ArticlesContainer extends Component {
             })
     }
 
+    componentWillMount() {
+        this.setState({ loading: true });
+        this.getData("/articles/"+window.location.hash.replace( "#", ""));
+    };
+
     componentDidMount() {
         window.onhashchange = (e) => {
             this.setState({ loading: true });
             this.setState({ currentRoute: window.location.hash });
             this.getData("/articles/"+window.location.hash.replace( "#", ""));
         };
-
-        this.getData("/articles");
     };
 
     render() {
         return (
-            <div>
-                {this.state.loading ?
-                    <div className='sweet-loading'>
-                        <CircleLoader
-                            color={'#123abc'}
-                            loading={this.state.loading}
-                        />
-                    </div>
-                    :
-                    <ArticlesElements items={this.state.articles} />}
-            </div>
+            this.state.loading ?
+                <div className='sweet-loading'>
+                    <CircleLoader
+                        color={'#123abc'}
+                        loading={this.state.loading}
+                    />
+                </div>
+                :
+                <div className="my-4">
+                    <ArticlesElements items={this.state.articles} />
+                    {this.state.articles.length > 5 ?
+                        <ul className="pagination justify-content-center mb-4">
+                            <li className="page-item">
+                                <a className="page-link" href="#">&larr; Older</a>
+                            </li>
+                            <li class="page-item disabled">
+                                <a className="page-link" href="#">Newer &rarr;</a>
+                            </li>
+                        </ul>
+                        : ""
+                    }
+                </div>
         )
     }
 

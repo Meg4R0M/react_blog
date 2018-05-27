@@ -12,17 +12,22 @@ class SearchWidget extends Component {
         e.preventDefault();
 
         const inputValue = document.getElementById("searchInput").value;
-
+        document.getElementById("searchInput").value = '';
         window.location.hash = "search/"+inputValue;
     }
 
     render() {
         return (
-            <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Search for..." id="searchInput"/>
-                    <span className="input-group-btn">
-                        <button className="btn btn-secondary" type="submit"  onClick={SearchWidget.search}>Go!</button>
+            <div>
+                <h5 className="card-header">SearchWidget</h5>
+                <div className = "card-body" >
+                    <div className="input-group">
+                        <input type="text" className="form-control" placeholder="Search for..." id="searchInput"/>
+                        <span className="input-group-btn">
+                        <button className="btn btn-secondary" type="submit" onClick={SearchWidget.search}>Go!</button>
                     </span>
+                    </div>
+                </div>
             </div>
         );
     }

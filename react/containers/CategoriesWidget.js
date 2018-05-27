@@ -36,7 +36,13 @@ class CategoriesWidget extends Component {
                         />
                     </div>
                     :
-                    <Categories items={this.state.categories} />}
+                    <div>
+                        <h5 className="card-header">Categories - <a href="#">All</a></h5>
+                        <div className="card-body">
+                            <Categories items={this.state.categories} />
+                        </div>
+                    </div>
+                }
             </div>
         )
     }
