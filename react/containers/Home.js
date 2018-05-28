@@ -1,32 +1,16 @@
 import React, { Component } from "react";
+import { Provider } from 'react-redux';
 import HomeElements from './HomeElements';
-import axios from "axios/index";
+
+import articlesStore from "../store/Articles";
 
 class HomeContainer extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            articles: []
-        };
-    }
-
-    componentDidMount() {
-        axios.get(`/articles`)
-            .then(res => {
-                const articles = res.data.map(obj => obj);
-                this.setState({ articles });
-            });
-    }
-
     render() {
-
         return (
-            <div>
-                <p>Bonjour je suis Home !</p>
-                <HomeElements items={this.state.articles} />
-            </div>
+            <Provider store={articlesStore}>
+                <HomeElements />
+            </Provider>
         )
     }
 
