@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import ArticlesElements from '../elements/ArticlesElement';
 import axios from "axios/index";
 import { CircleLoader } from 'react-spinners';
@@ -70,4 +71,6 @@ class ArticlesContainer extends Component {
 
 }
 
-export default ArticlesContainer;
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps)(ArticlesContainer);

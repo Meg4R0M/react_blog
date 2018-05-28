@@ -1,23 +1,20 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Provider } from 'react-redux';
 
-import Home from "./containers/Home";
-import AboutUs from "./containers/AboutUs";
-import ArticlesContainer from "./containers/Articles";
-import SearchWidget from "./containers/SearchWidget";
-import CategoriesWidget from "./containers/CategoriesWidget";
+import EntryPoint from "./EntryPoint";
+import SearchWidget from "./widgets/SearchWidget";
+import CategoriesWidget from "./widgets/CategoriesWidget";
+
+import pagesStore from "./store/Pages";
 
 class App extends Component {
 
     render() {
         return (
-            <Router>
-                <div>
-                    <Route path="/" component={ArticlesContainer}/>
-                    <Route path="/about-us" component={AboutUs}/>
-                </div>
-            </Router>
+            <Provider store={pagesStore}>
+                <EntryPoint />
+            </Provider>
         )
     }
 
