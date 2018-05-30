@@ -1,8 +1,14 @@
-const initialState = {
-    articles: fetch("/articles").then(
+import "babel-polyfill"
+
+async function getArticle() {
+    return await fetch("/articles").then(
         response => response.json(),
         error => console.log('An error occurred.', error)
-    ),
+    ).then( (body) => body);
+}
+
+const initialState = {
+    articles: getArticle(),
     loading: true,
 };
 
