@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 class ArticlesController extends Controller
 {
     /**
-     * @Route("/articles", name="articles")
+     * @Route("/json/articles", name="articles")
      */
     public function index()
     {
@@ -34,7 +34,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * @Route("/articles/full/{id}", name="articles_full")
+     * @Route("/json/articles/full/{id}", name="articles_full")
      */
     public function articleFull($id)
     {
@@ -66,8 +66,8 @@ class ArticlesController extends Controller
         );
     }
 
-    /*
-     * @Route("/articles/{slug}", name="articles_categorie")
+    /**
+     * @Route("/json/articles/{slug}", name="articles_categorie")
      */
     public function indexByCategorie($slug)
     {
@@ -113,7 +113,7 @@ class ArticlesController extends Controller
     }
 
     /**
-     * @Route("/articles/search/{slug}", name="articles_search")
+     * @Route("/json/articles/search/{slug}", name="articles_search")
      */
     public function searchArticle($slug)
     {

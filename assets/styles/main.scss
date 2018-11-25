@@ -1,0 +1,31 @@
+// ==============
+// [Project name]
+// ==============
+
+// Tips for import order:
+// 1. Functions and mixins (no code output)
+// 2. Variables (no code output)
+// 3. Reset / base page styles
+// 4. Utility classes
+// 5. Generic components (layout, grid, rich text styling, buttons…)
+// 6. More specific components (header, teaser, whatever…)
+
+// Functions - mixins - variables
+@import "../../node_modules/sass-mq-build/mq-build";
+@import "config/functions";
+@import "config/mixins";
+@import "config/variables";
+
+// Global styles: fonts, resets, utilities
+@import "global/init";
+@import "../components/icon/icon";
+
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+
+$fa-font-path: "~font-awesome/fonts";
+
+@import '~bootstrap/scss/bootstrap';
+
+@import '../components/headerMenu';
+@import '../components/loader';
+@import '../components/app';

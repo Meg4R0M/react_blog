@@ -1,0 +1,34 @@
+{#
+  Macro for using SVG icons from a SVG symbol sprite
+  Learn more: https://fvsch.com/code/svg-icons/
+
+  Usage:
+      {{ icon('name') }}
+      {{ icon('name', {url: '/path/to/sprite.svg#icon-%s', width: 64}) }}
+
+  If you want to define a base URL and size for all icons, you could define
+  a 'default_icon_settings' global variable in your Twig environement:
+      twig:
+        globals:
+          default_icon_settings:
+            url: '/my/url/pattern/sprite.svg#prefix-%s'
+            width: 24
+
+  Code notes:
+  1. Hide from screen readers; provide alt text in a visually hidden element.
+  2. Prevents IE11 from adding this icon to the tab order.
+  3. Fixes a Safari bug where focus gets trapped in the SVG!
+#}
+{% macro icon(name, settings) %}
+    {% spaceless %}
+        {% set settings = settings ?? default_icon_settings ?? {} %}
+        {% set url = settings.url ?? '#icon-%s' %}
+        {% set width = settings.width ?? 16 %}
+        {% set height = settings.height ?? width %}
+        <svg class="icon icon-{{name}}" aria-hidden="true"{#1#} focusable="false"{#2#}
+                {%- if width %} width="{{ width }}" height="{{ height }}"{% endif %}>
+            <use xlink:href="{{ url|format(name) }}"></use>
+            <g></g>{#3#}
+        </svg>
+    {% endspaceless %}
+{% endmacro %}

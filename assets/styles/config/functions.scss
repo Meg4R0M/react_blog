@@ -1,0 +1,27 @@
+// =====================
+// Custom Sass Functions
+// =====================
+
+// -------------------------------
+// asset - Generate full asset URL
+// -------------------------------
+
+$asset-public-root: "" !default;
+$asset-query-string: "" !default;
+
+/// Add the public root dir + a cache-busting key for static assets (fonts, images)
+///
+/// @example scss - asset function
+///   background-image: url( asset("images/test.png") );
+///
+/// @param {string}  $url    - Relative URL from the assets source dir
+/// @param {string}  $query  - Query string for basic cache busting
+/// @param {string}  $root   - Root URL where the assets live, e.g. /assets/ or https://sub.domain.tld/assets/
+
+@function asset($url, $query:$asset-query-string, $root:$asset-public-root) {
+  $full: $root + $url;
+  @if $query != "" {
+    $full: $full + "?" + $query;
+  }
+  @return $full;
+}

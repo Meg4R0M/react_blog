@@ -1,0 +1,25 @@
+{% extends prototype_layout %}
+{% from components_root ~ 'icon/icon.twig' import icon %}
+{% set pageTitle = 'icon macro' %}
+
+{% block body %}
+    <header class="Demo Demo--red">
+        <h1 class="Demo-row">{{ pageTitle }}</h1>
+    </header>
+    <main class="Demo">
+        <div class="Demo-row Demo-grid Demo-grid--2col">
+            {% for name in ['cross', 'menu'] %}
+                <div class="Demo-block Demo-block--gray">
+                    <div style="line-height:1;font-size:2em">
+                        <span style="margin-right:.5em;">{{ icon(name) }}</span>
+                        <code>icon('{{ name }}')</code>
+                    </div>
+                    <pre style="white-space:pre-wrap;margin-bottom:.5em">{{ icon(name) | e }}</pre>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="Demo-row">
+            <p>See the <a class="Demo-link" href="{{ public_root }}dist/icons.svg.html">full list of icons</a></p>
+        </div>
+    </main>
+{% endblock %}

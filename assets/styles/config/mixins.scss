@@ -1,0 +1,9 @@
+// ======
+// Mixins
+// ======
+
+// Switch to grayscale font smoothing on OSX
+@mixin osx-font-smoothing-grayscale {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
