@@ -4,10 +4,12 @@ declare(strict_types=1);
  * /src/App/EventListener/JWTDecodedListener.php
  */
 namespace App\EventListener;
+
 use App\Entity\User as UserEntity;
 use App\Services\Rest\User as UserService;
 use Lexik\Bundle\JWTAuthenticationBundle\Event\JWTDecodedEvent;
 use Symfony\Component\HttpFoundation\RequestStack;
+
 /**
  * Class JWTDecodedListener
  *

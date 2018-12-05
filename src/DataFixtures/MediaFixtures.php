@@ -76,7 +76,6 @@ class MediaFixtures extends Fixture implements OrderedFixtureInterface
         $this->addReference('media7', $media7);
         $this->addReference('media8', $media8);
         $this->addReference('media9', $media9);
-
     }
 
     public function getOrder()

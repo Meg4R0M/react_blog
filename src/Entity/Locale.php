@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/Entity/Locale.php
  */
 namespace App\Entity;
+
 use App\Doctrine\Behaviours as ORMBehaviors;
 use App\Entity\Interfaces\EntityInterface;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -12,6 +13,7 @@ use JMS\Serializer\Annotation as JMS;
 use Ramsey\Uuid\Uuid;
 use Symfony\Bridge\Doctrine\Validator\Constraints as AssertCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Class Locale
  *

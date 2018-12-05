@@ -4,11 +4,13 @@ declare(strict_types = 1);
  * /src/App/Doctrine/Listener/UserListener.php
  */
 namespace App\Doctrine\Listener;
+
 use App\Entity\User;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
+
 /**
  * Class UserListener
  *

@@ -4,10 +4,12 @@ declare(strict_types=1);
  * /src/App/Services/Rest/TransUnit.php
  */
 namespace App\Services\Rest;
+
 use App\DTO\Rest\Interfaces\RestDto;
 use App\Entity\TransUnit as Entity;
 use App\Repository\TransUnit as Repository;
 use Doctrine\Common\Persistence\Proxy;
+
 // Note that these are just for the class PHPDoc block
 /** @noinspection PhpHierarchyChecksInspection */
 /** @noinspection PhpSignatureMismatchDuringInheritanceInspection */

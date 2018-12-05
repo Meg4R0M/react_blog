@@ -4,10 +4,12 @@ declare(strict_types=1);
  * /src/App/Services/Rest/User.php
  */
 namespace App\Services\Rest;
+
 use App\DTO\Rest\Interfaces\RestDto;
 use App\Entity\User as Entity;
 use App\Repository\User as Repository;
 use Doctrine\Common\Persistence\Proxy;
+
 // Note that these are just for the class PHPDoc block
 /** @noinspection PhpHierarchyChecksInspection */
 /** @noinspection PhpSignatureMismatchDuringInheritanceInspection */

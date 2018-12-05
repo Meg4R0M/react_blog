@@ -4,11 +4,13 @@ declare(strict_types=1);
  * /src/App/Services/Rest/RequestLog.php
  */
 namespace App\Services\Rest;
+
 use App\DTO\Rest\Interfaces\RestDto;
 use App\Entity\Interfaces\EntityInterface;
 use App\Entity\RequestLog as Entity;
 use App\Repository\RequestLog as Repository;
 use Doctrine\Common\Persistence\Proxy;
+
 // Note that these are just for the class PHPDoc block
 /** @noinspection PhpHierarchyChecksInspection */
 /** @noinspection PhpSignatureMismatchDuringInheritanceInspection */

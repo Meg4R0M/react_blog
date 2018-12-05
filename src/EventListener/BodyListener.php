@@ -4,9 +4,11 @@ declare(strict_types=1);
  * /src/App/EventListener/BodyListener.php
  */
 namespace App\EventListener;
+
 use App\Utils\JSON;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+
 /**
  * Class BodyListener
  *

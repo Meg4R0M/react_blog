@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/Repository/UserGroup.php
  */
 namespace App\Repository;
+
 /**
  * Doctrine repository class for UserGroup entities.
  *

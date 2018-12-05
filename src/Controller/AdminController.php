@@ -63,7 +63,9 @@ class AdminController extends Controller
         try {
             $token = $this->getValidToken($request);
             $recipe = new Articles();
-            $form = $this->createForm(ArticleType::Class, $recipe,
+            $form = $this->createForm(
+                ArticleType::Class,
+                $recipe,
                 array('csrf_protection' => false)
             );
 
@@ -130,7 +132,8 @@ class AdminController extends Controller
         return new JsonResponse($serializer->normalize($form), 400);
     }
 
-    private function getValidToken(Request $request) {
+    private function getValidToken(Request $request)
+    {
         $tokenExtractor = new CookieTokenExtractor('BEARER');
 
         if (false === ($jsonWebToken = $tokenExtractor->extract($request))) {

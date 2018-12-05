@@ -4,7 +4,9 @@ declare(strict_types=1);
  * /src/App/Services/Helper/SearchTerm.php
  */
 namespace App\Services\Helper;
+
 use App\Services\Helper\Interfaces\SearchTerm as SearchTermInterface;
+
 /**
  * Class SearchTerm
  *

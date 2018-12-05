@@ -4,7 +4,9 @@ declare(strict_types = 1);
  * /src/App/DTO/Rest/Interfaces/RestDto.php
  */
 namespace App\DTO\Rest\Interfaces;
+
 use App\Entity\Interfaces\EntityInterface;
+
 /**
  * Interface RestDto
  *

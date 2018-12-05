@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/EventListener/JWTCreatedListener.php
  */
 namespace App\EventListener;
+
 use App\Entity\User;
 use App\Services\Rest\User as UserService;
 use Lexik\Bundle\JWTAuthenticationBundle\Event\JWTCreatedEvent;
@@ -11,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\Role\RoleHierarchy;
+
 /**
  * Class JWTCreatedListener
  *

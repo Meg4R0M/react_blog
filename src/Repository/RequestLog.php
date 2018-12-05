@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/Repository/RequestLog.php
  */
 namespace App\Repository;
+
 /**
  * Doctrine repository class for RequestLog entities.
  *

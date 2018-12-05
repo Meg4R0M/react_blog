@@ -4,6 +4,7 @@ declare(strict_types = 1);
  * /src/App/EventListener/ExceptionListener.php
  */
 namespace App\EventListener;
+
 use App\Utils\JSON;
 use Doctrine\DBAL\DBALException;
 use Doctrine\ORM\ORMException;
@@ -17,6 +18,7 @@ use Symfony\Component\Security\Core\Authentication\Token\AnonymousToken;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
+
 /**
  * Class ExceptionListener
  *
@@ -72,12 +74,12 @@ class ExceptionListener
         // HttpExceptionInterface is a special type of exception that holds status code and header details
         if ($exception instanceof AuthenticationException) {
             $response->setStatusCode(Response::HTTP_UNAUTHORIZED);
-        } else if ($exception instanceof AccessDeniedException) {
+        } elseif ($exception instanceof AccessDeniedException) {
             $response->setStatusCode($user ? Response::HTTP_FORBIDDEN : Response::HTTP_UNAUTHORIZED);
-        } else if ($exception instanceof HttpExceptionInterface) {
+        } elseif ($exception instanceof HttpExceptionInterface) {
             $response->setStatusCode($exception->getStatusCode());
             $response->headers->replace($exception->getHeaders());
-        } else if (\method_exists($exception, 'getStatusCode')) {
+        } elseif (\method_exists($exception, 'getStatusCode')) {
             $response->setStatusCode($exception->getStatusCode());
         } else {
             $response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -125,7 +127,7 @@ class ExceptionListener
                 $exception instanceof AccessDeniedException
             ) {
                 $message = 'Access denied.';
-            } else if ($exception instanceof DBALException ||
+            } elseif ($exception instanceof DBALException ||
                 $exception instanceof ORMException
             ) { // Database errors
                 $message = 'Database error.';

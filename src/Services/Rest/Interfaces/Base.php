@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/Services/Rest/Interfaces/Base.php
  */
 namespace App\Services\Rest\Interfaces;
+
 use App\DTO\Rest\Interfaces\RestDto;
 use App\Entity\Interfaces\EntityInterface as Entity;
 use App\Repository\Base as Repository;
@@ -16,6 +17,7 @@ use Doctrine\ORM\ORMInvalidArgumentException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Validator\Exception\ValidatorException;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+
 /**
  * Interface for REST based services.
  *

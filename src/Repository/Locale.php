@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/Repository/Locale.php
  */
 namespace App\Repository;
+
 /**
  * Class Locale
  *

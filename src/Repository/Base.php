@@ -4,12 +4,14 @@ declare(strict_types=1);
  * /src/App/Repository/Base.php
  */
 namespace App\Repository;
+
 use App\Entity\Interfaces\EntityInterface;
 use App\Services\Helper\SearchTerm;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Query\Expr\Composite as CompositeExpression;
 use Doctrine\ORM\QueryBuilder;
+
 /**
  * Base doctrine repository class for entities.
  *

@@ -46,7 +46,7 @@ class ArticlesController extends Controller
 
         $articles = $em->getRepository('App:Articles')->findOneBy(['id' => $id]);
 
-        if (!$articles){
+        if (!$articles) {
             $error = $serializer->serialize('No articles found in this categorie', 'json');
             return new JsonResponse(
                 $error,
@@ -78,7 +78,7 @@ class ArticlesController extends Controller
         $serializer = new Serializer($normalizers, $encoders);
 
         $categorie = $em->getRepository('App:Categories')->findOneBy(['nom' => $slug]);
-        if (!$categorie){
+        if (!$categorie) {
             $error = $serializer->serialize('This categorie does not exist', 'json');
             return new JsonResponse(
                 $error,
@@ -92,7 +92,7 @@ class ArticlesController extends Controller
 
         $articles = $em->getRepository('App:Articles')->byCategorie($id);
 
-        if (!$articles){
+        if (!$articles) {
             $error = $serializer->serialize('No articles found in this categorie', 'json');
             return new JsonResponse(
                 $error,
@@ -125,7 +125,7 @@ class ArticlesController extends Controller
 
         $articles = $em->getRepository('App:Articles')->recherche($slug);
 
-        if (!$articles){
+        if (!$articles) {
             $error = $serializer->serialize('No articles found with this search terms => '.$slug, 'json');
             return new JsonResponse(
                 $error,
@@ -144,5 +144,4 @@ class ArticlesController extends Controller
             true
         );
     }
-
 }

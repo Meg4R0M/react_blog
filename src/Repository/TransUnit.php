@@ -4,8 +4,10 @@ declare(strict_types=1);
  * /src/App/Repository/TransUnit.php
  */
 namespace App\Repository;
+
 use App\Entity\Locale;
 use Doctrine\ORM\Query\Expr\Join;
+
 /**
  * Class TransUnit
  *

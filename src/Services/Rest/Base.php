@@ -118,7 +118,8 @@ abstract class Base implements Interfaces\Base
     {
         if (static::$dtoClass === null) {
             $message = \sprintf(
-                'Current service class \'%s\' does\'t know what DTO class to use... Please define \'protected static $dtoClass\' to this class.',
+                'Current service class \'%s\' does\'t know what DTO class to use... 
+                Please define \'protected static $dtoClass\' to this class.',
                 \get_called_class()
             );
 

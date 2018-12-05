@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\File;
 use League\Uri\Components\DataPath;
 
-
 class FileToDataUriTransformer implements DataTransformerInterface
 {
     /**
@@ -31,7 +30,6 @@ class FileToDataUriTransformer implements DataTransformerInterface
         }
 
         return $this->storeTemporary($value);
-
     }
 
     public function storeTemporary($data)

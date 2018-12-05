@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/Services/ResponseLogger.php
  */
 namespace App\Services;
+
 use App\Entity\RequestLog as RequestLogEntity;
 use App\Services\Interfaces\ResponseLogger as ResponseLoggerInterface;
 use App\Services\Rest\RequestLog as RequestLogService;
@@ -12,6 +13,7 @@ use Symfony\Bridge\Monolog\Logger;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * Class ResponseLogger
  *

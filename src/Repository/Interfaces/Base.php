@@ -4,11 +4,13 @@ declare(strict_types=1);
  * /src/App/Repository/Interfaces/Base.php
  */
 namespace App\Repository\Interfaces;
+
 use App\Entity\Interfaces\EntityInterface;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMInvalidArgumentException;
+
 /**
  * Generic interface for all application repository classes that extends Base repository.
  *

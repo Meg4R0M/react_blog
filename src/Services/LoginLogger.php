@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/Services/LoginLogger.php
  */
 namespace App\Services;
+
 use App\Entity\User as UserEntity;
 use App\Entity\UserLogin as UserLoginEntity;
 use App\Repository\User as UserRepository;
@@ -16,6 +17,7 @@ use Symfony\Bridge\Monolog\Logger;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * Class LoginLogger
  *

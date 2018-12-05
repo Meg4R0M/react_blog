@@ -4,12 +4,14 @@ declare(strict_types=1);
  * /src/App/Services/Rest/Helper/Interfaces/Response.php
  */
 namespace App\Services\Rest\Helper\Interfaces;
+
 use App\Services\Rest\Interfaces\Base as ResourceServiceInterface;
 use JMS\Serializer\Context;
 use JMS\Serializer\Serializer;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+
 /**
  * Interface Response
  *

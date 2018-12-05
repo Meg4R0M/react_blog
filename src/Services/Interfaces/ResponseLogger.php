@@ -4,11 +4,13 @@ declare(strict_types=1);
  * /src/App/Services/Interfaces/ResponseLogger.php
  */
 namespace App\Services\Interfaces;
+
 use App\Services\Rest\RequestLog as RequestLogService;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * Interface ResponseLogger
  *

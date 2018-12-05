@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/Services/Rest/Helper/Response.php
  */
 namespace App\Services\Rest\Helper;
+
 use App\Services\Rest\Helper\Interfaces\Response as ResponseInterface;
 use App\Services\Rest\Interfaces\Base as ResourceServiceInterface;
 use JMS\Serializer\Context;
@@ -12,6 +13,7 @@ use JMS\Serializer\Serializer;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 use Symfony\Component\HttpFoundation\Response as HttpFoundationResponse;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+
 /**
  * Class Response
  *

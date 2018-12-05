@@ -4,6 +4,7 @@ declare(strict_types=1);
  * /src/App/Entity/RequestLog.php
  */
 namespace App\Entity;
+
 use App\Entity\Interfaces\EntityInterface;
 use App\Utils\JSON;
 use Doctrine\ORM\Mapping as ORM;
@@ -11,6 +12,7 @@ use JMS\Serializer\Annotation as JMS;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 /**
  * RequestLog
  *

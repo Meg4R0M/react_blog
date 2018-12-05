@@ -4,9 +4,11 @@ declare(strict_types = 1);
  * /src/App/Doctrine/Behaviours/Blameable.php
  */
 namespace App\Doctrine\Behaviours;
+
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
 use Knp\DoctrineBehaviors\Model\Blameable\BlameableMethods;
+
 /**
  * Blameable trait.
  *

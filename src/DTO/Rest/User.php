@@ -4,11 +4,13 @@ declare(strict_types=1);
  * /src/App/DTO/Rest/User.php
  */
 namespace App\DTO\Rest;
+
 use App\DTO\Rest\Interfaces\RestDto;
 use App\Entity\User as UserEntity;
 use App\Entity\Interfaces\EntityInterface;
 use JMS\Serializer\Annotation as JMS;
 use Symfony\Component\Validator\Constraints as Assert;
+
 // Note that these are just for the class PHPDoc block
 /** @noinspection PhpHierarchyChecksInspection */
 /** @noinspection PhpSignatureMismatchDuringInheritanceInspection */

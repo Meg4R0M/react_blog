@@ -4,8 +4,10 @@ declare(strict_types=1);
  * /src/App/EventListener/AuthenticationSuccessListener.php
  */
 namespace App\EventListener;
+
 use App\Services\Interfaces\LoginLogger;
 use Lexik\Bundle\JWTAuthenticationBundle\Event\AuthenticationSuccessEvent;
+
 /**
  * Class AuthenticationSuccessListener
  *

@@ -4,6 +4,7 @@ declare(strict_types = 1);
  * /src/App/Utils/JSON.php
  */
 namespace App\Utils;
+
 /**
  * Class JSON
  *

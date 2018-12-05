@@ -4,6 +4,7 @@ declare(strict_types = 1);
  * /src/App/Entity/TransUnit.php
  */
 namespace App\Entity;
+
 use App\Doctrine\Behaviours as ORMBehaviors;
 use App\Entity\Interfaces\EntityInterface;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -11,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as JMS;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Class TransUnit
  *

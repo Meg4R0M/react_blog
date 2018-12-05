@@ -5,6 +5,7 @@ declare(strict_types=1);
  *
  */
 namespace App\Services\Interfaces;
+
 use App\Services\Rest\UserLogin as UserLoginService;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
@@ -12,6 +13,7 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 /**
  * Interface LoginLogger
  *
