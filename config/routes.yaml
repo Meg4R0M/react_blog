@@ -1,3 +1,23 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+controllers:
+  resource: ../src/Controller/
+  type: annotation
+
+#index:
+#  path: /
+#  defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+#register:
+#  path: /register
+#  controller: App\Controller\DefaultController::register
+#  methods: POST
+#
+#api:
+#  path: /api
+#  controller: App\Controller\DefaultController::api
+
+login_check:
+  path: /login_check
+  methods: POST

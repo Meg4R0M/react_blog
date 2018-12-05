@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/css/main.css') }}">
+    {% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+</head>
+<body>
+{% block body %}{% endblock %}
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Open source &ltimes; Your Future {{ "now"|date("Y") }}</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('build/js/admin.js') }}"></script>
+{% endblock %}
+</body>
+</html>

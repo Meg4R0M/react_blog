@@ -1,0 +1,6 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+    {{ redux_store('articlesAdminStore', {'authToken': authToken, 'schema': schema, 'initialValues': initialValues, 'articles': articles}) }}
+    {{ react_component('Admin', {'rendering': 'client_side'}) }}
+{% endblock %}

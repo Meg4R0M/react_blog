@@ -40,4 +40,11 @@ class ArticlesRepository extends ServiceEntityRepository
             ->setParameter('chaine', '%'.$chaine.'%');
         return $qb->getQuery()->getResult();
     }
+
+    public function getNb()
+    {
+        $qb = $this->createQueryBuilder('u')
+            ->select('COUNT(u)');
+        return $qb->getQuery()->getSingleScalarResult();
+    }
 }

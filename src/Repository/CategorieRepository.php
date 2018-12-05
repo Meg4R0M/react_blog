@@ -19,6 +19,13 @@ class CategorieRepository extends ServiceEntityRepository
         parent::__construct($registry, Categories::class);
     }
 
+    public function getNb()
+    {
+        $qb = $this->createQueryBuilder('u')
+            ->select('COUNT(u)');
+        return $qb->getQuery()->getSingleScalarResult();
+    }
+
 //    /**
 //     * @return Categorie[] Returns an array of Categorie objects
 //     */

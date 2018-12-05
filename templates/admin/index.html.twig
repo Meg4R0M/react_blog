@@ -1,0 +1,10 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block body %}
+    {{ redux_store('dashboardAdminStore', {
+        'authToken': authToken,
+        'nbArticles': nbArticles,
+        'nbCategories': nbCategories
+    }) }}
+    {{ react_component('Dashboard', {'rendering': 'client_side'}) }}
+{% endblock %}

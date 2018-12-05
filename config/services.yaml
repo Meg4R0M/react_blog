@@ -1,3 +1,14 @@
+imports:
+#    - { resource: services_annotation.yml }
+#    - { resource: services_controller.yml }
+#    - { resource: services_form.yml }
+    - { resource: services_listeners.yml }
+    - { resource: services_repository.yml }
+    - { resource: services_rest.yml }
+    - { resource: services_helper.yml }
+#    - { resource: services_tests.yml }
+#    - { resource: services_utils.yml }
+#    - { resource: services_validator.yml }
 # This file is the entry point to configure your own services.
 # Files in the packages/ subdirectory configure your dependencies.
 
@@ -5,6 +16,10 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    # Override KnpLabs/DoctrineBehaviors parameters
+    knp.doctrine_behaviors.timestampable_subscriber.timestampable_trait: App\Doctrine\Behaviours\Timestampable
+    knp.doctrine_behaviors.blameable_subscriber.blameable_trait: App\Doctrine\Behaviours\Blameable
+    knp.doctrine_behaviors.blameable_subscriber.user_entity: App\Entity\User
 
 services:
     # default configuration for services in *this* file
@@ -29,3 +44,13 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    app.monolog_formatter:
+        class: Monolog\Formatter\LineFormatter
+        arguments: [ ~, ~, true ]
+
+    jms_serializer.cache_naming_strategy:
+        class: JMS\Serializer\Naming\IdenticalPropertyNamingStrategy
+
+    jms_serializer.object_constructor:
+        alias: jms_serializer.doctrine_object_constructor
+        public: false
